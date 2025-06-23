@@ -18,7 +18,6 @@ import {
     const menus = [
       { name: "Home", path: "/", icon: HomeIcon },
       { name: "Mahasiswa", path: "/mahasiswa", icon: UsersIcon },
-      { name: "Settings", path: "/settings", icon: Cog6ToothIcon },
     ];
   
     return (

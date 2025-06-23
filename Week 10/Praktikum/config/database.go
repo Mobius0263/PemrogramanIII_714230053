@@ -11,6 +11,7 @@ import (
 
 var DBName = "db2025"
 var MahasiswaCollection = "data_mahasiswa"
+var UserCollection = "user"
 var MongoString string = os.Getenv("MONGOSTRING")
 
 func MongoConnect(dbname string) (db *mongo.Database) {

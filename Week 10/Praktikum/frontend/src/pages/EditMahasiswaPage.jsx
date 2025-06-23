@@ -33,7 +33,9 @@ export function EditMahasiswaPage() {
       });
       navigate("/mahasiswa");
     } catch (err) {
-      Swal.fire("Error", "Gagal memperbarui data mahasiswa.", "error");
+      const errorMessage =
+        err?.response?.data?.error || "Gagal memperbarui data mahasiswa.";
+      Swal.fire("Error", errorMessage, "error");
     }
   };
 

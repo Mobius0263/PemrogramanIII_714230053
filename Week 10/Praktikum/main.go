@@ -8,6 +8,9 @@ import (
 	"os"
 	"strings"
 
+	_ "Cluster0263/docs"
+
+	"aidanwoods.dev/go-paseto"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
@@ -21,7 +24,27 @@ func init() {
 	}
 }
 
+// @title TES SWAGGER PEMROGRAMAN III
+// @version 1.0
+// @description This is a sample swagger for Fiber
+
+// @contact.name API Support
+// @contact.url https://github.com/indrariksa
+// @contact.email indra@ulbi.ac.id
+
+// @host localhost:8099
+// @BasePath /
+// @schemes http
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
 func main() {
+	privateKey := paseto.NewV4AsymmetricSecretKey()
+	publicKey := privateKey.Public()
+
+	fmt.Println("Private Key (hex):", privateKey.ExportHex())
+	fmt.Println("Public Key (hex):", publicKey.ExportHex())
+
 	app := fiber.New()
 
 	//Logging Request di terminal

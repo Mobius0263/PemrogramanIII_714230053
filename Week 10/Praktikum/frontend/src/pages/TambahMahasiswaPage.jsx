@@ -19,10 +19,12 @@ export function TambahMahasiswaPage() {
         navigate("/mahasiswa");
       });
     } catch (error) {
+      const errorMessage =
+      error?.response?.data?.error || "Gagal menyimpan data mahasiswa.";
       Swal.fire({
         icon: "error",
         title: "Gagal!",
-        text: "Gagal menyimpan data mahasiswa." + (error),
+        text: errorMessage,
         confirmButtonColor: "#ef4444", // Tailwind red-500
       });
     }

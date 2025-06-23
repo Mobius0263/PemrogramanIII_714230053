@@ -2,6 +2,7 @@ import { Sidebar } from "../molecules/Sidebar";
 import { Navbar } from "../molecules/Navbar";
 import { Footer } from "../molecules/Footer";
 import { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
 
 export function LayoutDashboard({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -60,7 +61,7 @@ export function LayoutDashboard({ children }) {
             isDesktop && sidebarOpen ? "ml-64" : ""
           }`}
         >
-          {children}
+          <Outlet/>
         </main>
       </div>
 
